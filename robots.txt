@@ -1,0 +1,5 @@
+# tracsheet.com — public marketing site
+User-agent: *
+Allow: /
+
+Sitemap: https://tracsheet.com/sitemap.xml
