@@ -577,13 +577,20 @@ body{
 
 /* Quieter variant for FAQ questions so they never compete with the section title. */
 .ts-metal--quiet{
+  /* Readable fallback first (11.0:1 on the FAQ card). */
   color:#c9c6bd;
   /* background-IMAGE, not the `background` shorthand: the shorthand resets
-     background-clip to border-box, which made the clipped text transparent
-     (i.e. invisible). Caught in runtime QA. */
+     background-clip to border-box, which made the clipped text transparent.
+     PALETTE RAISED: the previous floor (#34363a / #4c4f54) measured 1.60:1 and
+     2.35:1 against the #0d0e10 card — far below the 4.5:1 minimum — and with a
+     300% background-size those dark stops occupied most of the cycle, so the
+     questions read as disabled. Every stop below is now >= 6:1, so the text is
+     legible at EVERY frame; the shimmer is a soft reflection travelling across
+     brushed silver rather than dark text lighting up. */
   background-image:linear-gradient(100deg,
-    #34363a 0%, #4c4f54 26%, #8f9095 46%, #b9b9b4 50%,
-    #8f9095 54%, #4c4f54 74%, #34363a 100%);
+    #8f9092 0%, #a8a9a5 18%, #bfbfb9 34%, #d5d2c7 46%,
+    #e8e2cd 50%, #cfb585 54%, #d5d2c7 60%, #bfbfb9 74%,
+    #a8a9a5 88%, #8f9092 100%);
   background-size:300% 100%;
   -webkit-background-clip:text; background-clip:text;
   -webkit-text-fill-color:transparent;
